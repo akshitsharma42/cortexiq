@@ -1,0 +1,40 @@
+{
+  "name": "cortexiq",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Operating System for organizational knowledge",
+  "author": "CortexIQ <hello@cortexiq.com>",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@11.8.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean && rm -rf node_modules",
+    "test": "turbo test"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.0",
+    "turbo": "^2.9.18"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshitsharma42/cortexiq.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/akshitsharma42/cortexiq/issues"
+  },
+  "homepage": "https://github.com/akshitsharma42/cortexiq#readme"
+}

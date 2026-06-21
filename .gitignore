@@ -1,42 +1,40 @@
+# ============================================
 # Dependencies
+# ============================================
 node_modules/
 .pnp
 .pnp.js
+.pnp.cjs
 
-# Testing
-coverage/
-
-# Next.js
+# ============================================
+# Build Outputs
+# ============================================
 .next/
 out/
-
-# Production
 build/
 dist/
+.turbo/
+*.tsbuildinfo
 
+# ============================================
 # Environment
+# ============================================
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# ============================================
+# Testing
+# ============================================
+coverage/
+*.lcov
+.nyc_output/
 
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/settings.json
-.idea/
-*.swp
-*.swo
-
+# ============================================
 # Python
+# ============================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -47,10 +45,46 @@ venv/
 .venv/
 *.egg-info/
 .eggs/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
 
+# ============================================
+# IDE
+# ============================================
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# OS
+# ============================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ============================================
 # Docker
-.docker/
+# ============================================
+docker-compose.override.yml
 
-# Misc
+# ============================================
+# Logs
+# ============================================
 *.log
-.turbo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================
+# Misc
+# ============================================
+*.pem
+*.key
+.vercel
+.cache

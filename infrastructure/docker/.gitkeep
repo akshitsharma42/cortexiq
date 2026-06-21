@@ -1,0 +1,5 @@
+# Infrastructure: Docker
+# Docker configurations will be added here.
+# - docker-compose.yml (local dev)
+# - Dockerfile per service
+# - .dockerignore

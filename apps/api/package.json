@@ -1,0 +1,30 @@
+{
+  "name": "@cortexiq/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo node_modules"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "helmet": "^8.1.0",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@cortexiq/shared-types": "workspace:*",
+    "@cortexiq/shared-config": "workspace:*",
+    "@cortexiq/shared-utils": "workspace:*",
+    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "eslint": "^9.0.0"
+  }
+}

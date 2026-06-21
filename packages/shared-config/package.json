@@ -1,0 +1,17 @@
+{
+  "name": "@cortexiq/shared-config",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.js",
+  "files": [
+    "eslint",
+    "typescript",
+    "prettier"
+  ],
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}

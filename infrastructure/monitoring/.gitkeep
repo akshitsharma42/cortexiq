@@ -1,0 +1,6 @@
+# Infrastructure: Monitoring
+# Monitoring and alerting configs will be added here.
+# - Health check scripts
+# - Sentry config
+# - Uptime monitoring
+# - Log aggregation

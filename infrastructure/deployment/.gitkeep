@@ -1,0 +1,5 @@
+# Infrastructure: Deployment
+# Deployment scripts and configs will be added here.
+# - Vercel config (web)
+# - Railway/Render config (api, ai)
+# - CI/CD pipeline configs
