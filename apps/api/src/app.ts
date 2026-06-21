@@ -1,18 +1,19 @@
 import express, { Express } from "express";
 import cors from "cors";
+import helmet from "helmet";
+import routes from "./routes";
 
 const app: Express = express();
 
-// Minimal middleware
-app.use(express.json());
+// ── Security Middleware ─────────────────────
+app.use(helmet());
 app.use(cors());
 
-// Health route
-app.get("/health", (_req, res) => {
-  res.status(200).json({
-    status: "ok",
-    service: "api",
-  });
-});
+// ── Body Parsing ────────────────────────────
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// ── Routes ──────────────────────────────────
+app.use(routes);
 
 export default app;

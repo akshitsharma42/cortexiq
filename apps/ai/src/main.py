@@ -8,11 +8,20 @@ app = FastAPI(
 )
 
 
+@app.get("/")
+async def root() -> dict:
+    """Root endpoint."""
+    return {
+        "service": "cortexiq-ai",
+        "version": "0.1.0",
+        "docs": "/docs",
+    }
+
+
 @app.get("/health")
 async def health_check() -> dict:
-    """Health check endpoint."""
+    """Health check endpoint — used by load balancers and monitoring."""
     return {
         "status": "ok",
-        "service": "cortexiq-ai",
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "service": "ai",
     }

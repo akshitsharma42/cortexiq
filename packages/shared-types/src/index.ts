@@ -2,10 +2,15 @@
  * @cortexiq/shared-types
  *
  * Shared TypeScript type definitions used across all CortexIQ services.
- * Add entity interfaces, API contracts, and common types here.
+ * Each entity has its own file; this barrel re-exports everything.
  */
 
-// ── API Response ────────────────────────────
+// ── Entities ────────────────────────────────
+export * from "./user";
+export * from "./workspace";
+export * from "./document";
+
+// ── API Contracts ───────────────────────────
 export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
@@ -21,9 +26,8 @@ export interface ApiResponse<T = unknown> {
   };
 }
 
-// ── Health Check ────────────────────────────
 export interface HealthCheckResponse {
   status: "ok" | "degraded" | "down";
   service: string;
-  timestamp: string;
+  timestamp?: string;
 }

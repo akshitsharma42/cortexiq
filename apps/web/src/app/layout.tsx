@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CortexIQ",
+  description: "AI Operating System for organizational knowledge",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +12,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body style={{ margin: 0, fontFamily: "system-ui, sans-serif" }}>
+        {children}
+      </body>
     </html>
   );
 }
