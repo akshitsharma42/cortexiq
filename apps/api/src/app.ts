@@ -1,7 +1,7 @@
-import express from "express";
+import express, { Express } from "express";
 import cors from "cors";
 
-const app = express();
+const app: Express = express();
 
 // Minimal middleware
 app.use(express.json());
