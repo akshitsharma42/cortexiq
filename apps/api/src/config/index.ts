@@ -1,12 +1,10 @@
-/**
- * API application configuration.
- * Loads environment variables and exports typed config object.
- */
+import { env } from "../lib/env";
 
 const config = {
-  port: parseInt(process.env.PORT || "5000", 10),
-  nodeEnv: process.env.NODE_ENV || "development",
-  isDev: process.env.NODE_ENV !== "production",
+  port: parseInt(env.PORT, 10),
+  nodeEnv: env.NODE_ENV,
+  isDev: env.NODE_ENV !== "production",
+  databaseUrl: env.DATABASE_URL,
 } as const;
 
 export default config;
