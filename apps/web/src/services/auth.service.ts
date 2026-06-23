@@ -1,6 +1,6 @@
 import { User, AuthResponse } from "./auth.types"; // Will create types file
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:5001/api/v1";
 
 let memoryAccessToken: string | null = null;
 
@@ -19,6 +19,7 @@ async function fetchWithAuth(url: string, options: RequestInit = {}) {
 
   const response = await fetch(`${API_URL}${url}`, {
     ...options,
+    credentials: "include",
     headers,
   });
 

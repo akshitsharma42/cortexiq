@@ -175,7 +175,7 @@ User notifications.
 
 | Environment | URL |
 |-------------|-----|
-| Development | `http://localhost:5000/api/v1` |
+| Development | `http://localhost:5001/api/v1` |
 | Staging | `https://staging-api.cortexiq.com/api/v1` |
 | Production | `https://api.cortexiq.com/api/v1` |
 
