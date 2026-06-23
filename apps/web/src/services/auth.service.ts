@@ -10,7 +10,7 @@ export const setAccessToken = (token: string | null) => {
 
 export const getAccessToken = () => memoryAccessToken;
 
-async function fetchWithAuth(url: string, options: RequestInit = {}) {
+export async function fetchWithAuth(url: string, options: RequestInit = {}) {
   const headers = new Headers(options.headers || {});
   
   if (memoryAccessToken) {

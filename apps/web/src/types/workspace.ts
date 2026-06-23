@@ -1,15 +1,15 @@
-export interface IWorkspaceMember {
+export interface WorkspaceMember {
   userId: string;
   role: "owner" | "admin" | "member";
   joinedAt: Date;
 }
 
-export interface IWorkspace {
+export interface Workspace {
   _id: string;
   name: string;
   description?: string;
   ownerId: string;
-  members: IWorkspaceMember[];
+  members: WorkspaceMember[];
   createdAt: Date;
   updatedAt: Date;
 }

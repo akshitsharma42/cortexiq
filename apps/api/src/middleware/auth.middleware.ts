@@ -1,6 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 import { verifyAccessToken } from "../lib/jwt";
-import User from "../models/user.model";
+import User, { IUser } from "../models/user.model";
+
+export interface AuthRequest extends Request {
+  user?: IUser;
+}
 
 export async function authenticate(
   req: Request,
