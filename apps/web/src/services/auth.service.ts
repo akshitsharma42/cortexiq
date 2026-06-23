@@ -6,15 +6,30 @@ let memoryAccessToken: string | null = null;
 
 export const setAccessToken = (token: string | null) => {
   memoryAccessToken = token;
+  if (typeof window !== "undefined") {
+    if (token) localStorage.setItem("accessToken", token);
+    else localStorage.removeItem("accessToken");
+  }
 };
 
-export const getAccessToken = () => memoryAccessToken;
+export const getAccessToken = () => {
+  if (memoryAccessToken) return memoryAccessToken;
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("accessToken");
+    if (stored) {
+      memoryAccessToken = stored;
+      return stored;
+    }
+  }
+  return null;
+};
 
 export async function fetchWithAuth(url: string, options: RequestInit = {}) {
   const headers = new Headers(options.headers || {});
+  const token = getAccessToken();
   
-  if (memoryAccessToken) {
-    headers.set("Authorization", `Bearer ${memoryAccessToken}`);
+  if (token) {
+    headers.set("Authorization", `Bearer ${token}`);
   }
 
   const response = await fetch(`${API_URL}${url}`, {

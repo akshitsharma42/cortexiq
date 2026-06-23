@@ -36,7 +36,7 @@ export default function DashboardPage() {
             Hello, {user?.name || user?.email || "User"}. Here are your workspaces.
           </p>
         </div>
-        <CreateWorkspaceModal />
+        <CreateWorkspaceModal onCreated={loadWorkspaces} />
       </div>
 
       {isLoading && workspaces.length === 0 ? (
@@ -47,7 +47,7 @@ export default function DashboardPage() {
         <div className="text-center py-20 border rounded-xl border-dashed">
           <h3 className="text-lg font-medium mb-2">No workspaces found</h3>
           <p className="text-muted-foreground mb-4">Create your first workspace to get started.</p>
-          <CreateWorkspaceModal />
+          <CreateWorkspaceModal onCreated={loadWorkspaces} />
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -67,6 +67,7 @@ export default function DashboardPage() {
         workspace={editingWorkspace}
         open={!!editingWorkspace}
         onOpenChange={(open) => !open && setEditingWorkspace(null)}
+        onUpdated={loadWorkspaces}
       />
     </div>
   );

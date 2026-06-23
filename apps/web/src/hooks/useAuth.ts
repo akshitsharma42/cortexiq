@@ -10,14 +10,20 @@ export const useAuth = () => {
 
   useEffect(() => {
     const initAuth = async () => {
-      // In a real app with HttpOnly refresh cookies, we would hit /refresh or /me
-      // to re-establish the session on mount.
-      // For this step, we assume the user must login to get the memory token.
-      setLoading(false);
+      try {
+        if (authService.getAccessToken()) {
+          const { user } = await authService.getCurrentUser();
+          setUser(user);
+        }
+      } catch (error) {
+        console.error("Session restore failed", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     initAuth();
-  }, [setLoading]);
+  }, [setUser, setLoading]);
 
   const login = async (input: any) => {
     setLoading(true);
