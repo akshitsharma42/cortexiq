@@ -23,6 +23,9 @@ export const createWorkspace = async (
     }
 
     const workspace = await workspaceService.createWorkspace(parsed.data.body, userId);
+    
+    console.log("createWorkspace -> userId:", userId);
+    console.log("createWorkspace -> workspace:", workspace);
 
     res.status(201).json({
       success: true,
@@ -48,6 +51,9 @@ export const getWorkspaces = async (
     }
 
     const workspaces = await workspaceService.getUserWorkspaces(userId);
+
+    console.log("getWorkspaces -> userId:", userId);
+    console.log("getWorkspaces -> workspaces:", workspaces);
 
     res.status(200).json({
       success: true,
